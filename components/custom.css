@@ -1,0 +1,77 @@
+.vertical-dotted-line {
+  border-left: 2px dotted #6f377c; /* Adjust color and thickness as needed */
+  position: absolute;
+  top: 0;
+  left: calc(66.666% - 0.5px); /* Adjust horizontal position */
+  height: 100%;
+  width: 1px; /* Line thickness */
+}
+
+@media (max-width: 768px) {
+  /* Hide decorative elements on small screens */
+  .hide-on-small {
+    display: none;
+  }
+
+  .vertical-dotted-line {
+    border-left: 0;
+    border-top: 2px dotted #6f377c; /* Adjust to horizontal line */
+    top: calc(66.666% - 0.5px); /* Adjust vertical position */
+    left: 0;
+    width: 100%;
+    height: 1px; /* Line thickness */
+  }
+}
+
+/* Hide default radio buttons */
+input[type="radio"].hidden {
+  display: none;
+}
+
+/* Custom radio button styles */
+.radio-custom {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid ;
+  background-color: whitesmoke;
+  position: relative;
+}
+
+input[type="radio"].peer:checked + label .radio-custom {
+  background-color: #D183C9; /* Color when checked */
+}
+
+input[type="radio"].peer:checked + label .radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff; /* Inner dot color */
+  transform: translate(-50%, -50%);
+}
+
+.slider {
+  -webkit-appearance: none; /* Remove default appearance */
+  width: 100%; /* Full width */
+  height: 8px; /* Slider height */
+  background: pink; /* Track color */
+  border-radius: 5px; /* Rounded corners */
+  outline: none; /* Remove default outline */
+  opacity: 0.7; /* Slight transparency */
+  transition: opacity .2s; /* Smooth transition */
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default appearance */
+  appearance: none; /* Remove default appearance */
+  width: 24px; /* Thumb width */
+  height: 24px; /* Thumb height */
+  background: purple; /* Thumb color */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 50%; /* Rounded thumb */
+}
