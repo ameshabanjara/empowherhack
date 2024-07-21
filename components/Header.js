@@ -1,7 +1,11 @@
-import React from 'react';
+"use client"
+
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 const search = "/search.png";
 
-const Header = () => {
+const NavBar = () => {
     return (
         <div className="bg-pink w-screen p-3 flex flex-col items-center">
             {/* Top Container */}
@@ -11,16 +15,24 @@ const Header = () => {
             </div>
 
             {/* Bottom Container */}
-            <div className="flex w-screen p-1 flex-row justify-center items-center">
-                <p className="font-normal mx-2">career quiz</p>
-                <p className="font-normal mx-2">resources</p>
-                <p className="font-normal mx-2">careers</p>
-                <p className="font-normal mx-2">who we look up to</p>
+            <div className="flex w-screen p-1 flex-row justify-center items-center text-dark-purple">
+                <NavLink href="/" label="career quiz" />
+                <NavLink href="/careers" label="career" />
+                <NavLink href="/resources" label="resources" />
+                <NavLink href="/whowelookupto" label="who we look up to" />
             </div>
         </div>
     );
 };
 
+const NavLink = ({ href, label }) => {
+    return (
+      <Link href={href}>
+        <div className="transition duration-300 ease-in-out hover:text-snow cursor-pointer mx-7">{label}</div>
+      </Link>
+    );
+  };
 
 
-export default Header;
+
+export default NavBar;
